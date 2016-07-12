@@ -12,6 +12,7 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.Profile;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
@@ -35,9 +36,11 @@ public class MainActivity extends Activity {
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                info.setText("User ID:  " +
+               /* info.setText("User ID:  " +
                         loginResult.getAccessToken().getUserId() + "\n" +
-                        "Auth Token: " + loginResult.getAccessToken().getToken());
+                                "Auth Token: " + loginResult.getAccessToken().getToken());*/
+                Profile profile = Profile.getCurrentProfile();
+                info.setText("BIENVENIDO " + profile.getName());
             }
 
             @Override
