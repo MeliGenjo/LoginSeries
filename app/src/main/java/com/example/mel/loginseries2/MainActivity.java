@@ -41,6 +41,7 @@ public class MainActivity extends Activity {
                                 "Auth Token: " + loginResult.getAccessToken().getToken());*/
                 Profile profile = Profile.getCurrentProfile();
                 info.setText("BIENVENIDO " + profile.getName());
+
             }
 
             @Override
